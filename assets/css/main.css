@@ -3950,3 +3950,11 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+
+/* Custom */
+
+.current-project {
+	background-color: #9bf1ff;
+	color: white;
+	font-style: italic;
+}
