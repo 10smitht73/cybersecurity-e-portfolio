@@ -53,7 +53,7 @@
 						<!-- One -->
 							<section id="one">
                                 <div class="inner">
-								    <h2 id="content">Collaborative Learning Discussion 1</h2>
+								    <h2>Collaborative Learning Discussion 1</h2>
 										<p><strong>Question: </strong>Discuss why Cyber Security is now a global issue and why it is important for companies to invest in Cyber Security.</p>
 										<div class="row">
 											<div class="col-6 col-12-small box">
@@ -97,6 +97,48 @@
 									</ul>
 								</div>
 							</section>
+
+                        <!-- Three -->
+                            <section id="three">
+                                <div class="inner">
+                                    <h2>Collaborative Learning Discussion 2</h2>
+                                        <p><strong>Question: </strong>Identify and discuss two security technologies and the context in which they can be employed.</p>
+                                        <div class="row">
+                                            <div class="col-6 col-12-small box">
+                                                <h3>Initial Post</h3>
+                                                <h4>Intrusion Detection Systems</h4>
+                                                <p>Intrusion Detection Systems (IDS) play a pivotal role in defending against cyber threats, particularly those that operate discreetly, leaving victims unaware of compromise. Whether exploiting a zero-day vulnerability or infiltrating systems as a Trojan Horse, detecting and notifying sysadmin of a breach promptly is critical for mitigating consequences. </p>
+                                                <p>Intrusions, which are described as a threat against CIA (confidentiality, integrity, availability) or an attempt to bypass computer/network security mechanisms (Bace & Mell, 2001), are varied in nature and so require the implementation of varying detection systems. Firstly, misuse detection looks for suspicious user activity by comparing it to known signatures (such as contacting an IP that is known to be malicious) (Anderson, 2020). While this is effective against known vulnerabilities, it is unable to detect new threats and the validity of the signatures can be laborious to maintain (Liao et al., 2013). Secondly, anomaly detection systems attempt to identify behaviour that deviates from what the system has been trained to expect - often based on user profiles (Anderson, 2020). This allows detection of unknown vulnerabilities but comes at the cost of a high rate of false positive detections as user behaviour can be difficult to predict (Liao et al., 2013).</p>
+                                                <h4>Data Leakage Prevention</h4>
+                                                <p>While IDS is concerned with preventing network ingress, Data Leakage Prevention (DLP) mitigates attempts to extract information from a system - a practice that has become more difficult as our data has become increasingly agile. It is relatively trivial to protect data that is at rest in a system when compared with the task of protecting data travelling through a network or being used at an endpoint (Raman, 2011). A typical Data Loss Prevention System (DLPS) employs monitoring mechanisms such as regular expressions, data fingerprinting, and statistical analysis to identify sensitive data. Once the system has determined that a compromise is taking place, detection actions such as notifying and auditing can precede protection actions of blocking, encrypting and quarantining (Alneyadi, 2016). Interestingly, increasing popularity of HTTPS has created challenges for DLP systems despite being implemented to protect data (Anderson, 2020). Since HTTPS encrypts data before initiating transit, DLP systems have much more difficulty confirming whether that data is permitted to be transmitted.</p>
+                                                <p>Notably, both types of intrusion detection as well as data leakage prevention benefit greatly from advancements in machine learning. Misuse signatures can be considered more holistically and anomaly patterns can be more broadly analysed for a greater, more accurate capture rate (Ahmad et al., 2023). In DLP, larger datasets and their context can be considered more intelligently and security classification or encryption can be suitably added without the user needing to take action (Ghouse, 2019).</p>
+                                                <h4>References</h4>
+                                                <p>Ahmad, R., Alsmadi, I., Alhamdani, W. & Tawalbeh, L.A. (2023) Zero-day attack detection: a systematic literature review. Artificial Intelligence Review: 1-79.
+                                                <br>Alneyadi, S., Sithirasenan, E. & Muthukkumarasamy, V. (2016) A survey on data leakage prevention systems. Journal of Network and Computer Applications 62: 137-152.
+                                                <br>Anderson, R. (2020) Security Engineering: A guide to building dependable distributed systems. 3rd ed. Indianapolis, Indiana: John Wiley & Sons, Inc.
+                                                <br>Bace, R.G. & Mell, P. (2001) Intrusion detection systems.
+                                                <br>Ghouse, M., Nene, M.J. & Vembuselvi, C. (2019) Data leakage prevention for data in transit using artificial intelligence and encryption techniques. 2019 International Conference on Advances in Computing, Communication and Control (ICAC3): 1-6.
+                                                <br>Liao, H.J., Lin, C.H.R., Lin, Y.C. & Tung, K.Y. (2013) Intrusion detection system: A comprehensive review. Journal of Network and Computer Applications 36(1): 16-24.
+                                                <br>Raman, P., Kayacık, H.G. & Somayaji, A. (2011) Understanding data leak prevention. 6th Annual Symposium on Information Assurance (ASIA’11): 27.</p>
+                                            </div>
+                                            <div class="col-6 col-12-small box">
+                                                <h3>Summary Post</h3>
+                                                <p>Syed and Daniel have agreed that Intrusion Detection Systems (IDS) and Data Leakage Prevention Systems (DLPS) are crucial security components to incorporate in cyber security. Daniel particularly explained that the variety of preventative measures that a DLPS can take to avoid a data breach is hugely beneficial, but also adds that poorly classified/tagged data is much harder to shepherd (Gupta et al., 2022). The old adage of “garbage in, garbage out” rings true here and further acknowledges the criticality of human configuration regardless of technological advancement (Kilkenny & Robertson, 2018).</p>
+                                                <p>As elaborated by Stephanie, a key advantage of IDS is that threats can be detected in real time and hence reacted to quickly - reducing the window of opportunity for attackers. This advantage seems particularly desirable when considering IBM’s report (2023) that the average breach discovered by internal cyber security teams takes 182 days to identify.</p>
+                                                <p>Craig adds to my point on false positives as a drawback of IDS, but also applying it to DLPS - confirming false positives to be a widespread issue in automated detection of any kind. This is not surprising considering Anderson’s (2020) inference that even a 0.1% false positive rate can provide an unfathomable number of alerts to manage in a large, complex system.</p>
+                                                <p>A key theme of the discussion has been the use of artificial intelligence/machine learning to overcome weaknesses of the two systems. Syed commented on its use to combat the number of false positive alerts created by IDS when scanning for anomalous user behaviour. A study by Oliveira (2021) calls anomaly detection an “exciting area” for the application of neural networks, although the research states that the integration of AI in IDS is hindered by a lack of reliable data with which to train these algorithms. Al-Khater et al. (2020) proposes that more data could be available through collaboration between researchers and cyber law enforcement to create cyber criminal profiles, however, the sensitivity of much of this data makes this unlikely.</p>
+                                                <h4>References</h4>
+                                                <p>Al-Khater, W. A. et al. (2020) Comprehensive Review of Cybercrime Detection Techniques. IEEE access 8: 137293–137311.
+                                                <br>Anderson, R. (2020) Security Engineering: A guide to building dependable distributed systems. 3rd ed. Indianapolis, Indiana: John Wiley & Sons, Inc.
+                                                <br>IBM (2023) Cost of a Data Breach Report 2023. Available from https://www.ibm.com/reports/data-breach [Accessed on 19 January 2024].
+                                                <br>Gupta, I., Mittal, S., Tiwari, A., Agarwal, P. & Singh, A.K. (2022) TIDF-DLPM: Term and inverse document frequency based data leakage prevention model. arXiv preprint arXiv:2203.05367.
+                                                <br>Kilkenny, M.F. & Robinson, K.M. (2018) Data quality: “Garbage in–garbage out”. Health Information Management Journal 47(3): 103-105.
+                                                <br>Oliveira, N., Praça, I., Maia, E. & Sousa, O., (2021) Intelligent cyber attack detection and classification for network-based intrusion detection systems. Applied Sciences 11(4): 1674.
+                                                <br>Shishodia, B.S. & Nene, M.J. (2022) Data Leakage Prevention System for Internal Security. 2022 International Conference on Futuristic Technologies (INCOFT) 1-6.</p>
+                                            </div>
+                                        </div>
+                                </div>
+                            </section>
 
 					</div>
 
