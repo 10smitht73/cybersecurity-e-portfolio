@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Tom Smith - MSc Cybersecurity</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="../index.html" class="logo"><strong>Tom Smith</strong> <span>MSc Cybersecurity</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../landing.html">Launching into Cybersecurity</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="../elements.html" class="button primary fit">About Me</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- Banner -->
+							<section id="banner" class="style2">
+								<div class="inner">
+									<header class="major">
+										<h1>EMA README</h1>
+                                    </header>
+								</div>
+							</section>
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<pre><code>
+                                        # Tom Smith EMA - RSA Encryption and Signing
+
+
+
+
+## Background
+
+In public key encryption, the algorithm for encrypting and decrypting, as well as the encryption key are known but security of any message is still not compromised as there is a secret ‘private key’ (Brookshear & Brylow, 2020). The RSA (Rivest, Shamir, Adleman) algorithm is a particular implementation of this technique which relies on the complexity of factorising a number that is a product of two large primes (Anderson, 2020). 
+
+RSA public key encryption is more secure than symmetric key encryption, but is also more resource intensive. Therefore, instead of being used for the entirety of a secure communication (such as an online card transaction over HTTPS), public key encryption will be used to communicate a symmetric key which facilitates increased efficiency.
+
+The benefit of this system is that the prime numbers can be made increasingly large in order to stay ahead of current computer processing capabilities. Although an 829 bit number was factorised in 2020 (Boudot et al., 2020), it is commonplace for RSA encryption to use at least 2048 bits which is still considered non-factorisable (Anderson, 2020).
+
+A drawback of RSA is that it is not forward-secure (Huang et al., 2014). Successful attacks on RSA implementations in SSL/TLS have been around for over 20 years (Klima et al., 2003) and so old secrets protected with RSA are increasingly vulnerable to losing confidentiality. Furthermore, the longer keys required for security make RSA infeasible for some applications and so elliptic curve algorithms have become preferred (Muskat, 2018).
+
+
+
+
+## The Program
+
+My program showcases two uses of the RSA algorithm, namely message encryption/decryption and signing/verification. Both of these solutions are implemented using the python RSA library created by Stüvel (2019) in order to avoid mathematical complications of implementing the RSA algorithm from scratch.
+
+#### Encryption/Decryption
+
+For the encryption/decryption section, the program begins by generating a new RSA public/private key pair. The program then creates a file for each of the keys and writes them to their corresponding file for later use. Since the file is designed to be used as a Jupyter notebook with code cells that can be run individually, the file writing allows the key to be stored so that the variables can be changed to another set of keys if required without losing the stored keys.
+
+The message is then declared and encrypted by first encoding it. As described in the python RSA documentation, this step is necessary as the library operates on bytes and not strings (Stüvel, 2019). The encrypted message gets written to its own file. For the sake of integrity, the file is decrypted directly from the file so that any changes to the variable won’t impact the decryption.
+
+#### Signature Generation
+
+A new message is declared for the signature generation section. This message is encoded into bytes as above, hashed, and then signed with the private key (Stüvel, 2019). The hashing function recommended in documentation is SHA-1 which is now defunct (Leurant et al., 2020) and so this was replaced with SHA-256 in my implementation as described by Adeniyi et al. (2022). A one way hash is used here as the recipient will already have the message to hash themselves and just needs to verify its legitimacy. The signed message is written to its own file.
+
+
+## Running Instructions
+
+The program is a .ipynb file, and is designed to be run as a jupyter notebook so that each code cell can be run independently. 
+
+It is also capable of running as a .py file top-to-bottom. This will require opening the file as a jupyter notebook and re-downloading the file as a .py. It may be necessary to install the additional libraries before importing them by using ‘pip’:
+`pip install rsa pytest sympy`
+
+The variables `message` and `message_unsigned` can be edited to any string.
+## References
+
+Adeniyi, E. A., Falola, P. B., Maashi, M. S., Aljebreen, M. & Bharany, S. (2022) Secure sensitive data sharing using RSA and ElGamal cryptographic algorithms with hash functions. *Information* 13(10): 442.
+
+Anderson, R. (2020) *Security Engineering: A Guide to Building Dependable Distributed Systems*. 3rd ed. Indianapolis: Wiley Publishing.
+
+Boudot, F., Gaudry, F., Guillevic, A., Heninger, N., Thomé, E., Zimmermann, P., et al. (2020) Comparing the difficulty of factorization and discrete logarithm: a 240-digit experiment. *Advances in Cryptology – CRYPTO 2020*: 62-91.
+
+Brookshear, J. G. & Brylow, D. (2020) *Computer Science: an overview*. 13th ed. New York: Addison Wesley Longman Inc.
+
+Hamza, A. & Kumar, B. (2020) A Review Paper on DES, AES, RSA Encryption Standards. *9th International Conference System Modeling and Advancement in Research Trends (SMART)*: 333-338
+
+Huang, L. S., Adhikarla, S., Boneh, D. & Jackson, C. (2014) An experimental study of TLS forward secrecy deployments. *IEEE Internet Computing* 18(6): 43-51.
+
+Klíma, V., Pokorný, O. & Rosa, T. (2003) Attacking RSA-based sessions in SSL/TLS. *International Workshop on Cryptographic Hardware and Embedded Systems*: 426-440.
+
+Krekel, H., et al. (2004) How to write and report assertions in tests. Available from: https://docs.pytest.org/en/7.1.x/how-to/assert.html#assertions-about-expected-exceptions \[Accessed on 10 February 2024\].
+
+Leurant, G. & Peyrin, T. (2020) SHA-1 is a Shambles: First Chosen-prefix Collision and Application to the PGP Web of Trust. *29th USENIX security symposium (USENIX security 20)*: 1839-1856.
+
+Meurer, A., Smith, C. P., Paprocki, M., Čertík, O., Kirpichev, S. B. & Rocklin, M. (2017) SymPy: symbolic computing in Python. *PeerJ Computer Science* 3: 103.
+
+Muskat, J. (2018) Elliptic Curves and an Application in Cryptography. *Parabola* 54(1).
+
+Stüvel, S. A. (2019) Python-RSA 4.8 documentation. Available from: https://stuvel.eu/python-rsa-doc/index.html \[Accessed on 5 February 2024\].
+                                    </code></pre>
+								</div>
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
