@@ -3971,10 +3971,12 @@ input, select, textarea {
     font-size: 15px;
 }
 
-.active, .collapsible:hover {
-    background-color: #555;
+.section-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
 }
 
-.content.show {
+.section-content.show {
     display: block;
 }
