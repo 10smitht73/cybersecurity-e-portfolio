@@ -3971,6 +3971,10 @@ input, select, textarea {
     font-size: 15px;
 }
 
+button.collapsible {
+	color: red;
+}
+
 .section-content {
     padding: 0 18px;
     display: none;
