@@ -3954,7 +3954,7 @@ input, select, textarea {
 /* Custom */
 
 .current-project {
-	background-color: #7fc2cc;
+	background-color: #69a0a8;
 	color: white;
 	font-style: italic;
 }
@@ -3972,7 +3972,9 @@ input, select, textarea {
 }
 
 button.collapsible {
-	color: red;
+	text-transform: none;
+	background-color: #69a0a8;
+	
 }
 
 .section-content {
