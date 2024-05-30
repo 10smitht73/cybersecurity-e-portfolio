@@ -3974,7 +3974,14 @@ input, select, textarea {
 button.collapsible {
 	text-transform: none;
 	background-color: #69a0a8;
+	line-height: 1em;
+	box-shadow: none;
 	
+}
+
+button.collapsible:hover {
+	color: white;
+	background-color: #aaaaaa;
 }
 
 .section-content {
