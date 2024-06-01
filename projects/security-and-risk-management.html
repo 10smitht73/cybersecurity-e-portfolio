@@ -164,6 +164,14 @@
                                         <div class="box">
                                             <h3>Lecturecast</h3>
                                             <p><strong>Topic: </strong>Threat Management and Modelling</p>
+                                            <h4>Most interesting point learned</h4>
+                                            <p>STRIDE and DREAD can work together to classify threats and also rate the associated risk.</p>
+                                            <h4>Key Takeaways</h4>
+                                            <ul>
+                                                <li>Vulnerabilities are the weakness in a system, and threats are events that may exploit a vulnerability.</li>
+                                                <li>Threat modelling can be thought of as a collection of guidelines in the same way as the agile framework.</li>
+                                                <li>CVSS< OCTAVE, attack trees, PASTA, ATT&CK, and OWASP can all be useful in threat modelling.</li>
+                                            </ul>
                                         </div>
                                         <h2>Reflection</h2>
                                         <blockquote>My thoughts on Unit 3.</blockquote>
@@ -191,7 +199,93 @@
                                             <h3>Seminar</h3>
                                             <p><strong>Title: </strong>Threat Modelling Exercises</p>
                                             <h4>Activity Notes</h4>
-                                            <p>Shostack (2018), Spring et al (2021) threat models</p>
+                                            <p>Read Shostack (2018) chapters 3 - 5 (that cover STRIDE and DREAD, Attack Trees and Attack libraries) as well as Spring et al (2021) (that discusses the history and some failings with CVSS) and then create a threat model based on a large international airport based in the United States of America.</p>
+                                            <h4>Key Points</h4>
+                                            <ul>
+                                                <li>Critical infrastructure</li>
+                                                <li>Customer facing, and handles freight</li>
+                                                <li>Protect the lives of passengers and staff.</li>
+                                            </ul>
+
+                                            <h4>Assets</h4>
+                                            <ul>
+                                                <li>Passengers and staff</li>
+                                                <li>Airplane, airport building, baggage, fuel</li>
+                                                <li>Passenger information, flight control, CCTV, access control</li>
+                                            </ul>
+
+                                            <h4>Objectives</h4>
+                                            <ul>
+                                                <li>Ensure safety and security</li>
+                                                <li>Keep integrity and availability of systems</li>
+                                                <li>Confidentiality of sensitive data</li>
+                                            </ul>
+
+                                            <h4>Threat Actors</h4>
+                                            <ul>
+                                                <li>Terrorists and cybercriminals</li>
+                                                <li>Nation state</li>
+                                                <li>Hacktivists</li>
+                                                <li>Rogue employees</li>
+                                                <li>Negligent staff</li>
+                                            </ul>
+
+                                            <h4>Threats - Physical</h4>
+                                            <ul>
+                                                <li>Unauthorised access</li>
+                                                <li>Aircraft tampering</li>
+                                                <li>Bombings, shootings, other violence</li>
+                                            </ul>
+
+                                            <h4>Cyber Threats (Mitre Att&ck model)</h4>
+                                            <ul>
+                                                <li><strong>Initial Access</strong>: Phishing, supply chain compromise.</li>
+                                                <li><strong>Execution</strong>: Malware deployment on critical systems.</li>
+                                                <li><strong>Persistence</strong>: Backdoors, compromised accounts.</li>
+                                                <li><strong>Privilege Escalation</strong>: Exploiting vulnerabilities to gain higher privileges.</li>
+                                                <li><strong>Defence Evasion</strong>: Disabling security software.</li>
+                                                <li><strong>Credential Access</strong>: Credential dumping, brute force attacks.</li>
+                                                <li><strong>Discovery</strong>: Network scanning, system information discovery.</li>
+                                                <li><strong>Lateral Movement</strong>: Moving through the network to reach critical systems.</li>
+                                                <li><strong>Collection</strong>: Data from passenger systems, personal information theft.</li>
+                                                <li><strong>Exfiltration</strong>: Sending stolen data to external locations.</li>
+                                                <li><strong>Impact</strong>: Data destruction, service disruption.</li>
+                                            </ul>
+
+                                            <h4>STRIDE Analysis</h4>
+                                            <ul>
+                                                <li><strong>Spoofing</strong>: Fake access badges, phishing emails.</li>
+                                                <li><strong>Tampering</strong>: Altering flight control data, sabotaging baggage systems.</li>
+                                                <li><strong>Repudiation</strong>: Denial of actions by malicious insiders.</li>
+                                                <li><strong>Information Disclosure</strong>: Breach of passenger data, surveillance data leaks.</li>
+                                                <li><strong>Denial of Service</strong>: Overloading systems, jamming communication frequencies.</li>
+                                                <li><strong>Elevation of Privilege</strong>: Gaining unauthorised admin access.</li>
+                                            </ul>
+
+                                            <h4>Physical Security Controls</h4>
+                                            <ul>
+                                                <li>Biometrics</li>
+                                                <li>X-ray</li>
+                                                <li>Smart badges</li>
+                                                <li>Guards</li>
+                                                <li>CCTV</li>
+                                                <li>Drones</li>
+                                            </ul>
+
+                                            <h4>Cybersecurity Controls</h4>
+                                            <ul>
+                                                <li><strong>Initial Access</strong>: Email filtering, staff training on phishing.</li>
+                                                <li><strong>Execution</strong>: Strong, up to date, and configured anti-malware software.</li>
+                                                <li><strong>Persistence</strong>: Regular audits, monitoring for abnormal activities.</li>
+                                                <li><strong>Privilege Escalation</strong>: Least privilege RBAC, patch management.</li>
+                                                <li><strong>Defence Evasion</strong>: Advanced threat detection systems.</li>
+                                                <li><strong>Credential Access</strong>: MFA, strong password policies.</li>
+                                                <li><strong>Discovery</strong>: Network segmentation, IDS.</li>
+                                                <li><strong>Lateral Movement</strong>: Network access control (NAC), micro-segmentation.</li>
+                                                <li><strong>Collection</strong>: Data encryption, DLP.</li>
+                                                <li><strong>Exfiltration</strong>: Network monitoring, anomaly detection.</li>
+                                                <li><strong>Impact</strong>: Regular backups, disaster recovery plans.</li>
+                                            </ul>
                                         </div>
                                         <h3>Reflection</h3>
                                         <blockquote>My thoughts on Unit 4.</blockquote>
