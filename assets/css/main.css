@@ -3993,3 +3993,7 @@ button.collapsible:hover {
 .section-content.show {
     display: block;
 }
+
+.sim-iframe{
+	width: 100%;
+}
