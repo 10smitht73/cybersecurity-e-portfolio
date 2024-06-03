@@ -556,10 +556,80 @@
                                             <h3>Seminar</h3>
                                             <p><strong>Title: </strong>DR Solutions Design and Review</p>
                                             <h4>Activity Notes</h4>
-                                            <p><strong>Part A</strong></p>
-                                            <p>Opara-Martins et al (2014) and Morrow et al (2021) questions and answers.</p>
-                                            <p><strong>Part B</strong></p>
-                                            <p>DR solution diagram</p>
+                                            <h4>Part A</h4>
+                                            <p>Read Opara-Martins et al (2014) and Morrow et al (2021) and answer the following questions:</p>
+                                            <h4>What are some of the main vendor lock-in issues the authors identify? How would you mitigate them?</h4>
+                                            <ul>
+                                                <li><strong>Lack of Interoperability Makes it Difficult to Consolidate Enterprise IT Systems in the Cloud</strong>
+                                                    <ul>
+                                                        <li><strong>Mitigation</strong></li>
+                                                        <li>Choose technologies, languages, and platforms that are open and more likely to be compatible with multiple providers.</li>
+                                                        <li>Use interfaces that can act as middleware to communicate between different platforms as opposed to redesigning from scratch.</li>
+                                                        <li>Hybrid cloud solutions might reduce dependency on a platform’s operation.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Lack of Portability Hinders Enterprises from Migrating</strong>
+                                                    <ul>
+                                                        <li><strong>Mitigation</strong></li>
+                                                        <li>Choose a provider that offers support of multiple platforms such as Zerto that supports Azure, AWS, IBM Cloud, VMWare and others (Zerto, 2024).</li>
+                                                        <li>Using containers such as docker may allow certain applications to run consistently across providers.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Lack of Standards Creates Barriers to Cloud Entry</strong>
+                                                    <ul>
+                                                        <li><strong>Mitigations</strong></li>
+                                                        <li>Engage with industry bodies to help develop standards.</li>
+                                                        <li>Research popular configuration options and best practices to ensure use of likely standardisation candidates.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+
+                                            <h4>What are some of the security concerns with the modern cloud? How can these be mitigated?</h4>
+                                            <ul>
+                                                <li><strong>Unauthorised exposure of data to the internet</strong>
+                                                    <ul>
+                                                        <li><strong>Mitigations</strong></li>
+                                                        <li>Network segmentation/IDS/DLPS</li>
+                                                        <li>Data encryption</li>
+                                                        <li>Regular penetration testing</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Compromised system administrator credentials</strong>
+                                                    <ul>
+                                                        <li><strong>Mitigations</strong></li>
+                                                        <li>Strong password policy with regular password changes</li>
+                                                        <li>MFA</li>
+                                                        <li>RBAC to limit users who have certain access rights</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Permanent data loss</strong>
+                                                    <ul>
+                                                        <li><strong>Mitigations</strong></li>
+                                                        <li>Regular automated backups</li>
+                                                        <li>Data replication across many geographical locations</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Third party Weaknesses</strong>
+                                                    <ul>
+                                                        <li><strong>Mitigations</strong></li>
+                                                        <li>Perform extensive due diligence</li>
+                                                        <li>Contractual security requirements and responsibilities</li>
+                                                        <li>Regular audits and assessments</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+
+                                            <h4>Part B</h4>
+                                            <p>Create a high-level diagram of a DR solution for each of the following requirements and include a basic description of each design.</p>
+                                            <p><strong>RPO= 1 hr; RTO= 8 hrs; high availability (HA) required.</strong></p>
+                                            <span class="image fit"><img src="../images/DR 1.png"></span>
+                                            <p><strong>RPO= 24 hrs; RTO = 72 hrs; HA NOT required.</strong></p>
+                                            <span class="image fit"><img src="../images/DR 2.png"></span>
+                                            <p><strong>RPO= 5 mins; RTO= 1 hr; HA required.</strong></p>
+                                            <span class="image fit"><img src="../images/DR 3.png"></span>
+
+                                            <h4>References</h4>
+                                            <p>Zerto (2024) Zerto Virtual Manager Administration Guide Microsoft Hyper-V Environment. Available from <a href="https://help.zerto.com/bundle/Admin.HV.HTML">https://help.zerto.com/bundle/Admin.HV.HTML</a> [Accessed on 14 May 2024].</p>
                                         </div>
                                         <h3>Reflection</h3>
                                         <blockquote>My thoughts on Unit 10.</blockquote>
