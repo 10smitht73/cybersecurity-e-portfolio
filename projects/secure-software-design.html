@@ -54,44 +54,86 @@
 						
                         <!-- One -->
                             <section id="one">
-                                <button class="collapsible"><strong>Unit 1</strong><br>Introduction to Security and Risk Management</button>
+                                <button class="collapsible"><strong>Unit 1</strong><br>Introduction to Secure Software Development</button>
                                 <div class="section-content">
                                     <div class="inner">
                                         <header class="major">
                                             <h2>Unit 1</h2>
-                                            <h3>Introduction to Security and Risk Management</h3>
+                                            <h3>Introduction to Secure Software Development</h3>
                                         </header>
                                         <div class="box">
                                             <h3>Collaborative Discussion 1 Begins!</h3>
-                                            <p><strong>Question: </strong>Discuss 'Industry 4.0' as explained in Kovaitė and Stankevičienė, 2019.</p>
-                                            <h4>Initial Post</h4>
-                                            <p>Kovaitė and Stankevičienė (2019) discuss Industry 4.0: the 4th industrial revolution that evolves from the internet and automation age into the age of cyber physical systems (Loughlin, 2018). One of the technologies discussed as driving this revolution is the Internet of Things (IoT) which has allowed normal devices and tools to become a complex network of sensors collecting varied data across all industries. These diverse and vast datasets can then in turn be interpreted and analysed in another Industry 4.0 technology, known as Big Data. Together these advancements allow devices to be aware of their own context and make decisions to optimise their performance (Gokalp et al., 2016).</p>
-                                            <p>IoT devices are continually upgrading by nature. Technological advancements, security patches and volatility of legislation surrounding these new devices mean that products are quickly obsolete - which would be categorised as a technical risk by Kovaitė and Stankevičienė (2019). The culture shift towards cloud services has happened within a single workforce generation, and so companies can easily find themselves with staff who are unable to use this technology to its full potential (not to mention optimal configuration). The paper would categorise this as an example of a competence risk.</p>
-                                            <p>Mekhdiev et al. (2023) agrees that a corporate risk landscape is clearly impacted by digitisation, and requires a new model to anticipate these new risks. However, they also go on to suggest that this model should focus on highlighting the advantages which are often the adverse of the risks. It is suggested that this is the only way to truly offset the risks of digitisation.</p>
+                                            <p><strong>Question: </strong>Select one of the coding weaknesses which have been identified by OWASP and create a flowchart of the steps which may have led to the weakness occurring. Which UML models might you use to present the design of your proposed software, and why are they the most appropriate choice(s)?</p>
+                                            <h4>Chosen Weakness: CSRF (Cross-Site Request Forgery)</h4>
+                                            <h4>OWASP</h4>
+                                            <p>The Open Web Application Security Project (OWASP) is a body that assesses and collates web application vulnerabilities for the purpose of spreading awareness, and improving mitigation tactics. OWASP release ‘Top Ten’ lists which document the most common categories of vulnerabilities of the time, along with prevention tips and example scenarios (OWASP, 2021). A study by Lala et al. (2021) found that implementing the security guidance of the OWASP Top Ten can change a simple web app from “highly prone to attack” to being much more resilient to attacks such as SQL injection, and cross site scripting.</p>
+                                            <h4>CSRF (Cross-Site Request Forgery)</h4>
+                                            <p>This post will focus on CSRF (sometimes referred to as session riding) as an attack strategy, which is the practice of exploiting a user's legitimate active session on a website to execute a malicious request (Anderson, 2020). In order to do so, the attacker needs to understand the URL pattern of the target website and create a bespoke URL containing a malicious request which is then embedded in a malicious link (Kombade & Meshram, 2012). When the user clicks on this link, their authenticated session cookie will be attached to this URL in the HTTP request and so the server will execute the request.</p>
+                                            <p>The flowchart below demonstrates an attack along with potential mitigations that the website may have in place:</p>
+                                            <span class="image"><img width="70%" src="../images/SSD CSRF Flowchart.jpg"></span>
+                                            <p>This flow chart demonstrates that a threat actor does not need to rely on authenticating to execute an attack. The red path demonstrates a potentially successful attack which relies on multiple failures of the user/website:</p>
+                                            <ol>
+                                                <li>The user is successfully baited into clicking a link via phishing or other social engineering techniques. This outlines the need to stay vigilant and treat all links as suspicious. In corporations, it is vital to employ anti-phishing systems and conduct regular phishing training (Naqvi et al., 2023).</li>
+                                                <li>The session token remains active when the user clicks on the link. Good practice to avoid this would be to log out of a website as soon as you are finished using it.</li>
+                                                <li>Anti-CSRF tokens are not being used by the website. The user cannot control this, but could consider refraining from opening accounts with websites that do not employ this security feature.</li>
+                                            </ol>
+                                            <h4>Anti-CSRF Tokens</h4>
+                                            <p>Anywhere on a website that allows a user to submit a request should have a hidden input built into the submission that contains an anti-CSRF token which is generated server-side for each request. When the user submits the request, only legitimate requests will contain the token that was generated to the user, as the attacker cannot pre-empt the randomly generated token. (Das, 2022).</p>
+                                            <p>Notably, enforcing HTTPS does not prevent these attacks as it only encrypts the malicious request as opposed to validating it (Microsoft, 2023). Furthermore, it may seem sensible to only permit POST requests to prevent malicious GET requests. However, the attacker can generate a malicious form (which would submit via a POST request) as opposed to a malicious link (OWASP, N.D.).</p>
+                                            <h4>UML Models</h4>
+                                            <p>UML models are essential to model these weaknesses within a system from multiple perspectives, and also acts as a universal language between different teams working on the same system.</p>
+                                            <p><bold>Use Case Diagram: </bold>Identifies uses of the system that a threat actor may wish to exploit - points where CSRF protection should be prioritised (Brookshear & Brylow, 2020).</p>
+                                            <p><bold>Class Diagram:</bold> Displays components involved in session management and request handling, which should be analysed for CSRF protection mechanisms.</p>
+                                            <p><bold>Sequence Diagram:</bold> Traces the flow of actions and communications when the user interacts with the system and, therefore, when a CSRF attack could potentially occur (Brookshear & Brylow, 2020). Anti-CSRF tokens should be validated at these points (Anderson, 2020).</p>
+                                            <p>None of these diagrams should be exempt from a design document. However, the most important in terms of CSRF prevention is arguably the sequence diagram, as it plainly displays the exchange of requests.</p>
                                             <h4>References</h4>
-                                            <p>Gokalp, M. O., Kayabay, K., Akyol, M. A., Eren, P. E. & Koçyiğit, A. (2016) Big data for industry 4.0: A conceptual framework. 2016 international conference on computational science and computational intelligence (CSCI): 431 - 434.
-                                            <br>Kovaitė, K. & Stankevičienė, J. (2019) Risks of digitalisation of business models. Proceedings of 6th International Scientific Conference Contemporary Issues in Business, Management and Economics Engineering ‘2019.
-                                            <br>Loughlin, S. (2018) Industry 3.0 to Industry 4.0: Exploring the transition. New Trends in Industrial Automation.
-                                            <br>Mekhdiev, E., Sokolova, E., Guliev, I., & Mammadova, P. (2023) Major Risks and Consequences of Corporate Sector Digitalization. Iranian Economic Review 27(2): 561-582.</p>
+                                            <p>
+                                                Anderson, R. (2020) Security Engineering: A Guide to Building Dependable Distributed Systems, 3rd ed. Indianapolis: Wiley Publishing.<br>
+                                                Brookshear, J. G. & Brylow, D. (2020) Computer Science: an overview. 13th ed. New York: Addison Wesley Longman Inc.<br>
+                                                Das, P (2022) Guide to Cross Site Forgery (CSRF) Available from: <a href="https://pratikchimes.medium.com/guide-to-cross-site-request-forgery-csrf-eed498f8bea3">https://pratikchimes.medium.com/guide-to-cross-site-request-forgery-csrf-eed498f8bea3</a> [Accessed on 12 June 2024].<br>
+                                                Kombade, R. D. & Meshram, B. B. (2012) CSRF vulnerabilities and defensive techniques. International Journal of Computer Network and Information Security 4(1): 31-37.<br>
+                                                Lala, S. K., Kumar, A. & Subbulakshmi, T. (2021) ‘Secure web development using owasp guidelines’, 5th International Conference on Intelligent Computing and Control Systems (ICICCS). Madurai, India, 6-8 May. IEEE. 323-332.<br>
+                                                Microsoft (2023) Prevent Cross-Site Request Forgery (XSRF/CSRF) attacks in ASP.NET Core. Available from <a href="https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery?view=aspnetcore-8.0">https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery?view=aspnetcore-8.0</a> [Accessed on 14 June 2024].<br>
+                                                Naqvi, B., Perova, K., Farooq, A., Makhdoom, I., Oyedeji, S. & Porras, J. (2023) Mitigation strategies against the phishing attacks: A systematic literature review. Computers & Security 132(1): 1-25.<br>
+                                                OWASP (N.D.) Cross Site Request Forgery. Available from: <a href="https://owasp.org/www-community/attacks/csrf">https://owasp.org/www-community/attacks/csrf</a> [Accessed on 12 June 2024].<br>
+                                                OWASP (2021) OWASP Top Ten. Available from: <a href="https://owasp.org/www-project-top-ten/">https://owasp.org/www-project-top-ten/</a> [Accessed on 14 June 2024].
+                                            </p>
                                         </div>
                                         <div class="box">
                                             <h3>Lecturecast</h3>
-                                            <p><strong>Topic: </strong>Risk and the Risk Management Process</p>
+                                            <p><strong>Topic: </strong>Introduction to Secure Software Development</p>
                                             <h4>Most interesting point learned</h4>
-                                            <p>Open FAIR is designed to work with, and be compatible with a number of other alternative standards including: ISO 31000, ISO 27001, ISO 27005, COSO ERM, SABSA (Sherwood Applied Business Security Architecture), COBIT (Control Objectives for Information Technology), OCTAVE, NIST 800-30.</p>
+                                            <p>TOGAF (The Open Group Architecture Framework) has been criticised for lack of security focus, but can be integrated with SABSA (Sherwood Applied Business Security Architecture) for a more secure framework.</p>
                                             <h4>Key Takeaways</h4>
                                             <ul>
-                                                <li>Risk can be defined in many different ways and this should be considered when analysing risks.</li>
-                                                <li>Quantitative and qualitative analysis are very different ways to do a similar thing and both have pros and cons.</li>
-                                                <li>Controls can be preventative, directive, detective, or corrective.</li>
+                                                <li>Waterfall faces security challenges due to its limiting top down structure, and agile faces similar issues due to timebox restraints.</li>
+                                                <li>Secure design patterns such as 'interface' and 'factory' should be implemented whilst avoiding anti-patterns such as spaghetti code and copy and paste programming.</li>
+                                                <li>Different stages of the SDLC often warrant different UML diagrams: early - use case; structure - class; information and data - sequence.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="box">
+                                            <h3>Seminar</h3>
+                                            <p><strong>Title: </strong>Introduction, Team Project and Assessments</p>
+                                            <h4>Key Points</h4>
+                                            <ul>
+                                                <li>The first assessment is team based which has its advantages and challenges;</li>
+                                                <li>This module isn't teaching us to deveopment, it is teaching us to develop secure software;</li>
+                                                <li>It is important to offer constructive feedback on people's work as opposed to only giving positive feedback out of politeness;</li>
+                                                <li>Assessment 2 should not be started until feedback is given on assessment 1, as it may affect the approach;</li>
+                                                <li>In the mean time, study database creation and integrating that with a front end, and user classes.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="box">
+                                            <h3>Team Project Initial Meeting</h3>
+                                            <p><strong>Project brief: </strong>Design a digital application to securely store and manage copyrighted music materials, ensuring writers and performers' rights are protected. The app should include a database for artefacts, integrity verification through checksums, encryption, and timestamping, with roles for administrators and users. The design must be captured using UML diagrams, demonstrating adherence to UML standards and object-oriented design principles.</p>
+                                            <ul class="actions">
+                                                <li><a href="../essays/SSD - Team Contract Template.pdf" class="button">Read Team Contract</a></li>
                                             </ul>
                                         </div>
                                         <h2>Reflection</h2>
-                                        <blockquote>This unit has given a great introduction to risk management. Interestingly it seems to have prompted more questions than it has answered (as should any good introduction), such as relating to the diverse definitions of risk, the huge range of topics that it can cover, and the variety of mitigations available. Writing the initial post for the discussion was difficult because I did not enjoy the literature piece that was being studied. Although the ideas were interesting, the formulae was poorly explained with hardly any declaration of variables, and ‘table 5’ was referenced as an important template but did not even feature in any versions of the document that I could find. I have a background in mathematics, but I can imagine that someone without this experience may not have known that further explanation was necessary which could have been disarming for them. As Hernik & Jaworska (2018) explains, if a concept is difficult to understand, it affects both enjoyment and knowledge retention.</blockquote>
-                                        <blockquote>Despite this, I researched Industry 4.0 and found an illuminating explanation of the transition from 3.0 to 4.0 which helped to highlight the differences - Loughlin (2018). This has taught me not to be disheartened by distaste of a source, and to appreciate difference in perspective and style. The importance of a topic shouldn’t be undermined by the quality of a single source.</blockquote>
-                                        <h4>References</h4>
-                                        <p>Hernik, J. & Jaworska, E. (2018) ‘The effect of enjoyment on learning’, INTED2018 proceedings. Valencia, Spain, 5 - 7. Szczecin, Poland: West Pomeranian University of Technology. 508-514.</p>
-                                    </div>
+                                        <blockquote>This unit has introduced the module, and Cathryn explains that the module is considered “challenging yet rewarding” which I would agree with so far. It is refreshing to take part in a discussion forum which is not just reading a paper and answering questions on it which I find less facilitates varied discussion as everyone in making similar points. The discussion asks us to analyse an OWASP vulnerability, create a flowchart of the attack, and discuss suitable UML models. After my initial post, I was given feedback that I hadn’t properly introduced OWASP or my chosen vulnerability, and my flowchart and its explanation needed more detail. The comments were fair, as I had suffered a bit of a “sheep” mentality by following the format that previous students had used in their posts. I actually found that once I had drawn the flowchart out in a more detailed way, I understood the vulnerability much more as I was having to specifically acknowledge each stage of the attack and how it could be mitigated.</blockquote>
+                                        <blockquote>We were allocated our teams for the group project, and our group got in contact as soon as our schedules would allow to work on the group contract. Unfortunately, Melody, a later addition to the team, was not able to make it, but we will be sure to keep her up to date and included. Our group decided not to assign a leader as I had suggested it is more typical of the agile framework that everyone has equal responsibility. Although, I am conscious that Samer may have emerged as the natural “moderator” and Fatma seems particularly quiet (which was the case when I worked with her on a previous group task). I will take care to ensure Fatma is feeling confident and contributing, as it is important that we are all on the same page despite any shyness.</blockquote>
+                                        </div>
                                 </div>
                             </section>
 
