@@ -127,7 +127,7 @@
                                             <h3>Team Project Initial Meeting</h3>
                                             <p><strong>Project brief: </strong>Design a digital application to securely store and manage copyrighted music materials, ensuring writers and performers' rights are protected. The app should include a database for artefacts, integrity verification through checksums, encryption, and timestamping, with roles for administrators and users. The design must be captured using UML diagrams, demonstrating adherence to UML standards and object-oriented design principles.</p>
                                             <ul class="actions">
-                                                <li><a href="../essays/SSD - Team Contract Template.pdf" class="button">Read Team Contract</a></li>
+                                                <li><a href="../essays/SSD - Team Blue Contract.pdf" class="button">Read Team Contract</a></li>
                                             </ul>
                                         </div>
                                         <h2>Reflection</h2>
@@ -139,41 +139,132 @@
 
                         <!-- Two -->
                             <section id="two">
-                                <button class="collapsible"><strong>Unit 2</strong><br>Users, Assessments and the Risk Management Process</button>
+                                <button class="collapsible"><strong>Unit 2</strong><br>UML Modelling to Support Secure System Planning</button>
                                 <div class="section-content">
                                     <div class="inner">
                                         <header class="major">
                                             <h2>Unit 2</h2>
-                                            <h3>Users, Assessments and the Risk Management Process</h3>
+                                            <h3>UML Modelling to Support Secure System Planning</h3>
                                         </header>
                                         <div class="box">
-                                            <h3>Team Project Initial Meeting</h3>
-                                            <p><strong>Project brief: </strong>Following the given case study, carry out a risk assessment, evaluating the risks of both the effects of the digitalisation process and of the alternative of maintaining the status quo to the business.</p>
-                                            <ul class="actions">
-                                                <li><a href="../essays/Group 1 - Team Contract Template.pdf" class="button">Read Team Contract</a></li>
-                                            </ul>
+                                            <h3>Team Project Second Meeting</h3>
+                                            
                                         </div>
                                         <div class="box">
                                             <h3>Seminar</h3>
                                             <p><strong>Title: </strong>User Participation in the Risk Management Process</p>
-                                            <h4>Activity Notes</h4>
-                                            <p>Read the Spears & Barki (2010) article then prepare answers to the following questions:</p>
-                                            <p><strong>1. How did the authors use both Qualitative and Quantitative assessment approaches? What benefits did each approach yield?</strong></p>
-                                            <p>A combination of data collection and analysis, interviews and surveys. Qualitative was necessary as there was very little known data on which to base a quantitative analysis, quantitative were then used to test the theoretical model defined from the qualitative study. Combining the two provided context and testability. Idea was that two different approaches to the same problem would yield a more whole picture.</p>
-                                            <p><strong>2. What do the authors list as the advantages of involving users in the risk management process?</strong></p>
-                                            <ul>
-                                                <li>Buy-in Theory - users that participate in risk management are likely to feel more engaged in the activity in the future.</li>
-                                                <li>Organisational awareness around those who participated increased.</li>
-                                                <li>Users provided context that made the risk management more business aligned.</li>
-                                                <li>Good relationships form between users and IS professionals which can benefit the company in future IS endeavours.</li>
-
-                                            </ul>
-                                            <p><strong>3. How will the lack of user access affect the risk assessment you will carry out as part of your assessment?</strong></p>
-                                            <p>More assumptions will have to be made to compensate for the lack of business context that users can provide. The advantages/risks will need to be explained thoroughly to demonstrate the need for compliance in lieu of the ‘buy-in’ that might have been.</p>
-                                            <p><strong>4. Will it affect the choice of Qualitative vs. Quantitative assessment methods you utilise?</strong></p>
-                                            <p>A mixture of qualitative and quantitative will be used as there is also limited historical data available in our study. However, the benefits and conclusions that can be taken from quantitative analysis cannot be ignored. A mixture of the two limits the number of assumptions that need to be made.</p>
-                                            <p><strong>5. How might you mitigate any issues encountered?</strong></p>
-                                            <p>Assumptions, as long as they are properly recorded, can be used to model the case around any issues. Before doing so, any issues should be investigated and researched to find if there is a previous encounter of this issue which has a known workaround.</p>
+                                            <h4>Question 1: Table</h4>
+                                            <p>Create a 2-column multi-line table. In the left-hand column, include the software development stages of the Scrum agile life cycle approach to project management. In the right-hand column, describe the processes which you recommend are applied at each stage to ensure that secure software is produced at the end of the development:</p>
+                                            <table>
+                                                <tr>
+                                                    <th>Agile Scrum SDLC Phase</th>
+                                                    <th>SSD Approaches</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Product backlog</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>Agree on definitions - policies and wordings are solidified, and stakeholders are defined.</li>
+                                                            <li>Security requirements - assign security experts to provide requirements on security and privacy functionality.</li>
+                                                            <li>Role matrix - users and their software needs are identified.</li>
+                                                            <li>Requirements inspection - produce a validation report - are we making the right system?</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sprint planning</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>Initial education - make the team aware of the importance of security engineering and ensure there is a common base level of knowledge.</li>
+                                                            <li>Identify resources and trust boundaries - model the architecture as a network and identify the boundary that the system needs to communicate within.</li>
+                                                            <li>Specify operational environment - the environment that the software will use can dictate security requirements and limitations.</li>
+                                                            <li>Assumption documentation - how do they impact security?</li>
+                                                            <li>Security tools - author a list of approved libraries, frameworks, tools.</li>
+                                                            <li>Risk Analyses - earlier means cheaper in most cases.</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sprint</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>Secure design principles - identify risks in third party components.</li>
+                                                            <li>Assumption documentation - how do they impact security?</li>
+                                                            <li>Coding rules - replace unsafe functions.</li>
+                                                            <li>Dynamic analysis - run the code and track memory, privileges.</li>
+                                                            <li>Security testing - check against security policies.</li>
+                                                            <li>Vulnerability and penetration testing - simulate real world conditions and attacks.</li>
+                                                            <li>Signing the code - for the purpose of integrity.</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Daily scrum</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>Static code analysis - discuss code defects.</li>
+                                                            <li>Risk Analyses - what are the risks to the timebox?</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sprint review</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>Operational planning and readiness - manuals and documents produced.</li>
+                                                            <li>Incident response planning - what happens in a security emergency?</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sprint retrospective</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>Repository improvement - how could this be done better next time?</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <p>Question 2: Select five terms from ISO/IEC Standard 27000 Section 3 Terms and Definitions and write a 300-word blog post on how people can be managed to overcome cyber security attacks from the inside.</p>    
+                                            <h4>How People Can Be Managed To Overcome Cyber Security Attacks From The Inside</h4>
+                                            <p>Accidental insiders are people that, without intention, permit a cyber security attack through lack of judgement, knowledge or attention (Hadlington, 2021). These are a fundamental threat to businesses, and the following strategies should be employed to mitigate their actions:</p>
+                                        
+                                            <h4>Access Control</h4>
+                                            <p>Users should have bespoke access rights based on their specific responsibilities - known as Role Based Access Control (RBAC). Zero trust security means that no user or device, whether inside or outside of a network can be trusted (Garbis & Chapman, 2021). This also lowers the cost of security audits as security rules are less complex (Assunção, 2019).</p>
+                                        
+                                            <h4>Policy</h4>
+                                            <p>As well as being clear, policies must find a balance between security and usability. If a policy is too strict (such as a password policy), then it will lead to users finding a workaround (such as writing the password down) which then weakens security overall (Di Nocera & Tempestini, 2022).</p>
+                                        
+                                            <h4>Corrective Action</h4>
+                                            <p>This could be passive (i.e. the user doesn’t necessarily know that it has happened) such as DLPS which prevents data from leaving the system (Anderson, 2020), or link checks that prevent phishing links from being clicked. It could also be more direct such as disciplinary action or revoking privileges.</p>
+                                        
+                                            <h4>Continual Improvement</h4>
+                                            <p>Get users involved in the improvement of security. This invokes the buy-in theory - users that participate are likely to feel more engaged in the activity in the future (Spears & Barki, 2010). Users can also provide context that makes the risk management more business aligned.</p>
+                                        
+                                            <h4>Top Management</h4>
+                                            <p>Policies should apply to all users regardless of seniority. The higher the policies apply, the easier it is to build them into culture. Security tests such as internal phishing campaigns can become a management metric for their team.</p>
+                                        
+                                            <p>Although this list isn’t exhaustive, it provides a step in the right direction to managing the human factor of cyber security in business.</p>
+                                        
+                                            <h4>References</h4>
+                                            <p>
+                                                Anderson, R. (2020) Security Engineering: A guide to building dependable distributed systems. 3rd ed. Indianapolis, Indiana: John Wiley & Sons, Inc.
+                                            </p>
+                                            <p>
+                                                Assunção, P. (2019) A zero trust approach to network security. Proceedings of the Digital Privacy and Security Conference (Vol. 2019). Porto Portugal.
+                                            </p>
+                                            <p>
+                                                Di Nocera, F. & Tempestini, G. (2022) Getting rid of the usability/security trade-off: a behavioral approach. Journal of Cybersecurity and Privacy 2(2): 245-256.
+                                            </p>
+                                            <p>
+                                                Garbis, J. & Chapman, J. W. (2021) Zero Trust Security: An Enterprise Guide. Apress.
+                                            </p>
+                                            <p>
+                                                Hadlington, L. (2021) ‘The “human factor” in cybersecurity: Exploring the accidental insider’, in: IRMA (eds) Research anthology on artificial intelligence applications in security. IGI Global. 1960-1977.
+                                            </p>
+                                            <p>
+                                                Spears, J. L. & Barki, H. (2010) User Participation in Information Systems Security Risk Management. MIS Quarterly 34(3): 503-522.
+                                            </p>
                                         </div>
                                         <h2>Reflection</h2>
                                         <blockquote>In team 1, the initial meeting was hindered by the fact that Fatma had not made any contact in the introduction forum. This meant that we hadn’t been able to communicate with her and so only three of us were present for this initial meeting. While this allowed us to get to know each other better, the contract required that all four of us participated and so this is likely to hinder the progress of the project. Although I appreciate that this is a flexible course, it is important to adhere to deadlines - especially when working with others. I am going to take note of this for my own development and ensure that I am punctual and contributing to the team, as I understand the frustration that this may cause for others.</blockquote>
